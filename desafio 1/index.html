@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafios Alura</title>
+    <script>
+        window.onload = function() {
+            alert('Boa noite!');
+            
+            let escolha1 = 'sábado';
+            let escolha2 = 'domingo';
+            let digitar = prompt('Que dia da semana é hoje?');
+
+            // condição para final de semana
+            if ((digitar.toLowerCase() == escolha1) || (digitar.toLowerCase() == escolha2)) {
+                console.log('Bom final de semana!');
+                alert('Bom final de semana!');
+            } else {
+                alert('Boa semana!');
+            }
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
