@@ -15,3 +15,7 @@ textoNaTela("p", 'Escolha um número de 1 a 55!');
 function verificarChute () {
     console.log('O botão chute foi clicado!');
 }
+
+function gerarNumeroRandom () {
+    return parseInt(Math.random() * 55 + 1)
+}
