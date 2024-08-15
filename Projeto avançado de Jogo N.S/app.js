@@ -20,7 +20,7 @@ function verificarChute() {
         alert('Chuta um pouco mais alto.');
     } else if (chute == numeroSecreto) {
         textoNaTela('h1', 'Você acertou!');
-        textoNaTela('p', 'Parabéns, você achou o número secreto. :)');
+        textoNaTela('p', mensagemFinal);
         alert('EITA NOISSS!!!');
     }
 }
@@ -32,3 +32,10 @@ function gerarNumeroRandom() {
 
 // Aqui você deve ligar a função `verificarChute` ao evento de clique do botão
 document.querySelector('button').addEventListener('click', verificarChute);
+
+//função que verifica tentativas até acertar
+function contagemTentativas() {
+    let tentativa = 1;
+    let pluralTentativas = tentativa > 1 ? 'tentativas' : 'tentativa';
+    let mensagemFinal = (`Parabéns, você achou o número secreto com ${tentativa} ${pluraltentativas}. :)`); 
+}
