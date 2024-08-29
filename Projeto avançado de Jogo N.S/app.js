@@ -4,6 +4,13 @@ function mensagemInicial() {
     textoNaTela("p", 'Escolha um número de 1 a 55!');
 }
 
+//lista que armazena números sorteados
+let arrayNumerosSorteados = [];
+
+//quantidade máxima do número a ser sorteado
+let numeroMax = 55;
+
+
 // Gera o número secreto uma vez
 let numeroSecreto = gerarNumeroRandom(); 
 
@@ -31,7 +38,7 @@ function verificarChute() {
         let mensagemFinal = `Parabéns, você achou o número secreto com ${tentativas} ${tentativas > 1 ? 'tentativas' : 'tentativa'}. :)`;
         textoNaTela('h1', 'Você acertou!');
         textoNaTela('p', mensagemFinal);
-        alert('EITA NOISSS!!!');
+        alert('EITA NOISSS!!! PARABÉNS!');
         document.getElementById('reiniciar').removeAttribute('disabled'); // Habilita o botão de reiniciar
     }
 }
@@ -44,7 +51,20 @@ function limpar() {
 
 // Função que gera número aleatório
 function gerarNumeroRandom() {
-    return Math.floor(Math.random() * 55) + 1; // arredonda para baixo
+    let numeroEscolhido =  Math.floor(Math.random() * numeroMax) + 1; // arredonda para baixo
+    let qntdElementos = arrayNumerosSorteados.length;
+
+    if (qntdElementos == numeroMax) {
+        arrayNumerosSorteados = [];
+    }
+
+    if (arrayNumerosSorteados.includes(numeroEscolhido)) {
+        return gerarNumeroRandom();
+    } else {
+        arrayNumerosSorteados.push(numeroEscolhido);
+        console.log(arrayNumerosSorteados);
+        return numeroEscolhido;
+    }
 }
 
 // Função que reinicia o jogo
